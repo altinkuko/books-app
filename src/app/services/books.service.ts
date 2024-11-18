@@ -57,4 +57,8 @@ export class BooksService {
   addBook(book: Book) {
     this.books.push(book);
   }
+
+  searchBooks(searchQuery: string): Book[] {
+    return this.books.filter(book => book.title?.toLowerCase().includes(searchQuery.toLowerCase()));
+  }
 }

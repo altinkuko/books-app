@@ -16,8 +16,7 @@ export class BooksComponent {
     this.route.queryParams.subscribe(params => {
       const searchQuery = params['search'];
       if (searchQuery) {
-        this.books = this.booksService.getBooks();
-        this.searchBooks(searchQuery);
+        this.books = this.booksService.searchBooks(searchQuery);
       } else {
         this.books = this.booksService.getBooks();
       }
