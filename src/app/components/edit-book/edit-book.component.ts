@@ -43,4 +43,9 @@ export class EditBookComponent {
   onCancel() {
     this.router.navigate(['/books']);
   }
+
+  onDelete() {
+    this.booksService.deleteBook(this.book.id);
+    this.router.navigate(['/books']);
+  }
 }

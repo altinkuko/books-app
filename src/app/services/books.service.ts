@@ -61,4 +61,8 @@ export class BooksService {
   searchBooks(searchQuery: string): Book[] {
     return this.books.filter(book => book.title?.toLowerCase().includes(searchQuery.toLowerCase()));
   }
+
+  deleteBook(id: number | undefined) {
+    this.books = this.books.filter(book => book.id !== id);
+  }
 }
